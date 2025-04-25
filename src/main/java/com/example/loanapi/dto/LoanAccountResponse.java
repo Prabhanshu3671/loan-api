@@ -5,9 +5,16 @@ import java.util.List;
 public class LoanAccountResponse {
 
     private String loanAccountNumber;
-    private List<EmiDetail> emiDetails; // Add this field
+    private List<EmiDetail> emiDetails;
 
-    // Getters and setters
+    public LoanAccountResponse() {}
+
+    public LoanAccountResponse(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
+    private String errorMessage;
+
     public String getLoanAccountNumber() {
         return loanAccountNumber;
     }
@@ -22,6 +29,14 @@ public class LoanAccountResponse {
 
     public void setEmiDetails(List<EmiDetail> emiDetails) {
         this.emiDetails = emiDetails;
+    }
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
     }
 
     // Inner class to represent each EMI detail
@@ -65,3 +80,4 @@ public class LoanAccountResponse {
         }
     }
 }
+
